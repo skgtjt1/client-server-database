@@ -65,3 +65,5 @@ app.post("/userdata", function (req, res) {
 //VNeFSTf3!.Si2wK
 
 //postgres://postgres.pjzdtyovsihtkmbhdzgt:TechEducatorsPassWord@aws-0-eu-west-2.pooler.supabase.com:6543/postgres
+
+console.log(process.env);
