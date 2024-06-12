@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/main.js" defer></script>
+    <title>Form testing</title>
+  </head>
+  <body>
+    <header>Testing forms</header>
+    <main>
+      <form id="profile-form">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          name="username"
+          placeholder="Write your username"
+          required
+        />
+        <label for="location">Location:</label>
+        <input
+          type="text"
+          name="location"
+          placeholder="Write your location"
+          required
+        />
+        <button type="submit">Submit</button>
+        <!-- <input type="submit">  valid way to have a button in a form -->
+      </form>
+    </main>
+  </body>
+</html>
