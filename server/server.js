@@ -16,11 +16,11 @@ const app = express();
 dotenv.config();
 
 //import our connection string for the database using keywords process, env and the name of the string var in the .env
-const dbConnectonString = process.env.DATABASE_URL;
+const dbConnectionString = process.env.DATABASE_URL;
 
 //initialise our database with weird code "new" keyword creates object template, this creates a pool in our postgres database. The pool is like a "lounge area"
-const db = new pg.Pool({
-  connectionString: dbConnectonString,
+export const db = new pg.Pool({
+  connectionString: dbConnectionString,
 });
 
 console.log(db);
@@ -67,3 +67,10 @@ app.post("/userdata", function (req, res) {
 //postgres://postgres.pjzdtyovsihtkmbhdzgt:TechEducatorsPassWord@aws-0-eu-west-2.pooler.supabase.com:6543/postgres
 
 console.log(process.env);
+
+app.get("/biscuits", async (req, res) => {
+  const result = await db.query(`
+   SELECT * FROM biscuits
+    `);
+  res.json(result.rows);
+});
